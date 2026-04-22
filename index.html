@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A read on where agents fit in Sliq's stack | For Sliq</title>
+<meta name="description" content="Saw you're running an agent that spans LinkedIn, Slack, HubSpot, and Salesforce from a Slack-native surface. A bet about where the context layer starts drifting.">
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/png" href="logo.png">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="wrap">
+
+    <nav class="nav" aria-label="Brand">
+      <img src="logo.png" alt="Sliq logo" class="nav__logo" width="32" height="32">
+      <span class="nav__wordmark">Sliq</span>
+      <span class="nav__tag">Prepared for SS51</span>
+    </nav>
+
+    <header class="hero">
+      <span class="hero__eyebrow">A note from Eduba</span>
+      <h1>A read on where agents fit in Sliq's stack.</h1>
+      <p class="hero__lede">Sliq already runs the thing most of the AI market is still pitching. An agent that spans LinkedIn, Slack, Notion, HubSpot, Salesforce, and the Google Workspace, sitting inside the tool a founder already has open. The product exists. The harder questions show up around turn three: how does the agent remember what it did on turn one, which tool schema does it reach for when two overlap, and where does context drift when the workflow runs for a week.</p>
+
+      <aside class="note" aria-label="Context">
+        <div class="note__head">
+          <span class="note__avatar" aria-hidden="true">E</span>
+          <span class="note__who">Eduba</span>
+          <span>to Sliq</span>
+        </div>
+        <p class="note__body">One page. Built for your booth. Read in two minutes, respond if useful.</p>
+      </aside>
+    </header>
+
+    <section aria-labelledby="frame">
+      <h2 id="frame">The Eduba frame</h2>
+      <p>We think about agent products in three layers. Roughly 60% of what looks like "agent work" is traditional code and database work: storing state, retrying idempotent API calls, managing a queue. Roughly 30% is rule-based logic: which tool fires when, which field maps to which CRM property, what the retry policy is when LinkedIn returns a 429. The last 10% is where an LLM actually earns its keep: writing the message, interpreting ambiguous intent, deciding which prospect to pursue next.</p>
+
+      <div class="layers" role="list">
+        <div class="layer" role="listitem"><span class="layer__pct">60%</span><span class="layer__label">Traditional code and database work</span></div>
+        <div class="layer" role="listitem"><span class="layer__pct">30%</span><span class="layer__label">Rule-based logic and routing</span></div>
+        <div class="layer" role="listitem"><span class="layer__pct">10%</span><span class="layer__label">Genuine LLM work</span></div>
+      </div>
+
+      <p>Most teams put an LLM at all three layers and wonder why the agent hallucinates itself into a bad outbound message. Applied to Sliq's stack specifically, the question is whether your context layer separates those three concerns cleanly, or whether the model is doing work that a Postgres query and a switch statement would do faster, cheaper, and with fewer surprises.</p>
+    </section>
+
+    <section aria-labelledby="case">
+      <h2 id="case">The relevant case study</h2>
+      <p>One recent engagement was with Feeld, a product company whose CTO brought us in for a scoped sprint. The deliverable was an Organizational Context Architecture and a Strategic Operations Framework. The useful part of that engagement, for a team your size, was the artifact that came out of it: a folder structure that described how the team's AI systems, humans, and code were supposed to hand off to each other. Small scope, concrete output, survived the hand-off when the team grew.</p>
+      <div class="case">
+        <div class="case__name">Feeld, product company, CTO buyer</div>
+        <p class="case__body">Scoped sprint. Workshop, advisory calls, Organizational Context Architecture, Strategic Operations Framework. Shape maps cleanly to a Sliq-sized engineering team operationalizing agents across third-party APIs.</p>
+      </div>
+    </section>
+
+    <section aria-labelledby="paper">
+      <h2 id="paper">The relevant paper</h2>
+      <p>Interpretable Context Methodology. Submitted to ACM TiiS. Describes agent context as a layered filesystem with measurable interpretability and reproducibility gains. The repo is public, MIT-licensed, and sits at <a href="https://github.com/RinDig/Interpretable-Context-Methodology-ICM-" target="_blank" rel="noopener">github.com/RinDig/Interpretable-Context-Methodology-ICM-</a>. It is exactly the abstraction a Sliq-style agent product needs once it crosses a couple hundred active users.</p>
+    </section>
+
+    <section class="cta" aria-labelledby="cta">
+      <h2 id="cta">Next step</h2>
+      <p class="cta__body">30 minutes with <span class="cta__who">Matt Creamer (CRO, Eduba)</span>. Bring one agent run that went sideways and we will walk through where the context layer broke.</p>
+      <a class="btn" href="https://calendly.com/thecro-eduba/30min" target="_blank" rel="noopener" aria-label="Book 30 minutes with Matt Creamer on Calendly">
+        Book 30 minutes <span class="btn__arrow" aria-hidden="true">&rarr;</span>
+      </a>
+    </section>
+
+    <footer>
+      <span>Prepared by Eduba. <a href="https://eduba.io" target="_blank" rel="noopener">eduba.io</a></span>
+      <span>For Sliq / eMerge Americas 2026</span>
+    </footer>
+
+  </main>
+</body>
+</html>
